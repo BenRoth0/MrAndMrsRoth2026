@@ -1,0 +1,439 @@
+/* ========== VARIABLES & RESET ========== */
+
+:root {
+    /* Color Palette */
+    --primary-color: #d4a5a5;      /* Soft rose */
+    --secondary-color: #f5e6e0;    /* Cream/off-white */
+    --text-dark: #3d3d3d;          /* Dark gray */
+    --text-light: #6b6b6b;         /* Medium gray */
+    --accent: #c9958a;             /* Muted mauve */
+    --border-light: #e8ddd8;       /* Light taupe */
+    --shadow: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    
+    /* Typography */
+    --font-serif: 'Georgia', 'Garamond', serif;
+    --font-sans: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ========== TYPOGRAPHY ========== */
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: normal;
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-sm);
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent);
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+p {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ========== HERO SECTION ========== */
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
+    color: white;
+    padding: var(--spacing-sm) 0;
+    text-align: center;
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: var(--spacing-xl);
+    width: 100%;
+}
+
+.hero-left {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    color: white;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-2xl);
+    font-family: var(--font-serif);
+    font-weight: normal;
+}
+
+/* ========== COUNTDOWN TIMER ========== */
+
+.countdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: nowrap;
+    margin-top: 0;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    min-width: 70px;
+}
+
+.countdown-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.countdown-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-expired {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: var(--spacing-xl);
+    font-style: italic;
+}
+
+/* ========== MAIN CONTAINER & GRID ========== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+/* ========== CARDS ========== */
+
+.card {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    color: var(--primary-color);
+}
+
+.card p {
+    flex-grow: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Card-specific styling */
+.rsvp-card, .registry-card, .logistics-card, .playlist-card {
+    min-height: 300px;
+}
+
+/* ========== DETAIL ITEMS (for Logistics) ========== */
+
+.detail-item {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-item h3 {
+    color: var(--accent);
+    margin-bottom: var(--spacing-sm);
+}
+
+.detail-item p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* ========== BUTTONS ========== */
+
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-color);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ========== FOOTER ========== */
+
+.footer {
+    background: var(--secondary-color);
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    margin-top: var(--spacing-2xl);
+    color: var(--text-light);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet and smaller desktop */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 2rem;
+        --spacing-2xl: 2.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left {
+        text-align: center;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .countdown {
+        gap: var(--spacing-md);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .countdown-item {
+        padding: var(--spacing-md) var(--spacing-md);
+        min-width: 75px;
+    }
+
+    .countdown-value {
+        font-size: 2rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .card {
+        padding: var(--spacing-md);
+        min-height: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 1.5rem;
+        --spacing-2xl: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        min-height: 35vh;
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .countdown {
+        gap: var(--spacing-sm);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .countdown-item {
+        padding: var(--spacing-sm) var(--spacing-sm);
+        min-width: 50px;
+    }
+
+    .countdown-value {
+        font-size: 1.3rem;
+    }
+
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+
+    .container {
+        padding: var(--spacing-lg) var(--spacing-sm);
+        gap: var(--spacing-md);
+    }
+
+    .card {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .btn {
+        width: 100%;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .detail-item {
+        margin-bottom: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+
+@media print {
+    .countdown {
+        display: none;
+    }
+}
