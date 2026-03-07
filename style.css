@@ -210,8 +210,29 @@ p {
 }
 
 /* Card-specific styling */
-.rsvp-card, .registry-card, .logistics-card, .playlist-card {
+.rsvp-card, .registry-card, .logistics-card {
     min-height: 300px;
+}
+
+@media (min-width: 769px) {
+    .container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "rsvp logistics"
+            "registry logistics";
+    }
+
+    .rsvp-card {
+        grid-area: rsvp;
+    }
+
+    .registry-card {
+        grid-area: registry;
+    }
+
+    .logistics-card {
+        grid-area: logistics;
+    }
 }
 
 /* ========== DETAIL ITEMS (for Logistics) ========== */
