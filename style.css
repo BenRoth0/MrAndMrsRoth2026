@@ -34,6 +34,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -81,10 +82,11 @@ p {
     padding: var(--spacing-md) var(--spacing-sm);
     text-align: center;
     width: 100%;
-    min-height: 20vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-snap-align: start;
 }
 
 .hero-content {
@@ -174,12 +176,12 @@ p {
 /* ========== MAIN CONTAINER & GRID ========== */
 
 .container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding: var(--spacing-xl) var(--spacing-sm);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);    scroll-snap-align: start;
 }
 
 /* ========== CARDS ========== */
@@ -306,6 +308,7 @@ p {
     padding: var(--spacing-md) var(--spacing-md);
     margin-top: var(--spacing-2xl);
     color: var(--text-light);
+    scroll-snap-align: start;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
