@@ -512,7 +512,7 @@ p {
 .registry-mobile,
 .event-details-mobile {
     display: none;
-    background: var(--page-background);
+    background: transparent;
 }
 
 .details-mobile .section-content {
@@ -534,19 +534,10 @@ p {
     text-align: center;
 }
 
-.schedule-mobile {
-    background: var(--page-background);
-}
-
 .schedule-mobile .section-content {
     display: flex;
     flex-direction: column;
     padding: var(--spacing-lg);
-}
-
-.registry-mobile {
-    background: var(--page-background);
-    color: var(--text-dark);
 }
 
 .registry-mobile .section-content {
@@ -612,6 +603,13 @@ p {
 
 /* Tablet (Portrait) and Mobile */
 @media (max-width: 768px) {
+
+    body {
+        background: var(--page-background);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
     .main-content {
         display: none;
     }
