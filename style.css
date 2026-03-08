@@ -326,6 +326,7 @@ p {
 
 .payment-buttons{
     display:flex;
+    flex-direction: row;
     gap:0.75rem;
     justify-content:center;
     margin:0.5rem 0;
@@ -554,7 +555,7 @@ p {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg);
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-sm);
 }
 
 .registry-mobile h2 {
@@ -623,7 +624,7 @@ p {
     }
 
     .section-content {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-xs);
         max-width: 100%;
     }
 
@@ -727,6 +728,11 @@ p {
         margin-left: auto;
         margin-right: auto;
     }
+    
+    .payment-buttons{
+        flex-direction: column;
+        
+    }
 
     .registry-message {
         font-size: 0.9rem;
@@ -748,7 +754,7 @@ p {
     .section {
         padding: var(--spacing-lg) var(--spacing-sm);
     }
-
+    
     .card {
         padding: var(--spacing-md);
     }
