@@ -118,7 +118,8 @@ p {
 .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: center;    justify-content: center;
+    align-items: center;
+    justify-content: center;
     gap: var(--spacing-2xl);}
 
 .hero-title {
@@ -126,6 +127,7 @@ p {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 0;
+    text-align: center;
 }
 
 .hero-title-wrapper {
@@ -313,25 +315,50 @@ p {
     font-size: 0.95rem;
 }
 
-/* ========== SCHEDULE CARD ========== */
+/* ========== SCHEDULE CARD TIMELINE ========== */
 
 .schedule-items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-    width: 100%;
-    margin-top: var(--spacing-md);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
 }
 
+/* timeline line */
+.schedule-items::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border-light);
+    z-index: 0;
+}
+
+/* each event */
 .schedule-item {
-    background: rgba(255, 255, 255, 0.55);
-    padding: var(--spacing-sm);
-    border-radius: 8px;
+    position: relative;
     text-align: center;
-    border: 1px solid var(--border-light);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex: 1;
+    padding-top: var(--spacing-lg);
+}
+
+/* timeline dot */
+.schedule-item::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid var(--secondary-color);
+    z-index: 1;
 }
 
 .schedule-item h3 {
@@ -348,6 +375,10 @@ p {
 .schedule-item .description {
     font-size: 0.85rem;
     color: var(--text-light);
+}
+
+.schedule-item:hover::before {
+    transform: translateX(-50%) scale(1.2);
 }
 
 /* ========== REGISTRY CARD ========== */
@@ -570,13 +601,31 @@ p {
     }
 
     .schedule-items {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-        margin-top: var(--spacing-md);
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: var(--spacing-lg);
+    }
+
+    .schedule-items::before {
+        top: 0;
+        bottom: 0;
+        left: 8px;
+        right: auto;
+        width: 2px;
+        height: auto;
     }
 
     .schedule-item {
-        padding: var(--spacing-md);
+        text-align: left;
+        padding-left: var(--spacing-lg);
+        padding-top: 0;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .schedule-item::before {
+        top: 6px;
+        left: 0;
+        transform: none;
     }
 
     h2 {
