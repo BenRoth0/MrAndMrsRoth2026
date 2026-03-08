@@ -226,8 +226,8 @@ p {
 
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--spacing-md);
+    grid-template-columns: 2fr 3fr;
+    gap: var(--spacing-xs);
     width: 100%;
     height: 100%;
     max-width: 1600px;
@@ -320,6 +320,63 @@ p {
 
 .rsvp-card p {
     font-size: 0.95rem;
+}
+
+/* ========== PAYMENT BUTTONS ========== */
+
+.payment-buttons{
+    display:flex;
+    flex-direction: row;
+    gap:0.75rem;
+    justify-content:center;
+    margin:0.5rem 0;
+}
+
+.payment-buttons .btn{
+    display:flex;
+    flex:1;
+    align-items:center;
+    justify-content:center;
+    gap:0.6rem;
+}
+
+.payment-icon{
+    width:22px;
+    height:22px;
+    display:block;
+    flex-shrink:0;
+}
+
+.btn-paypal .payment-icon {
+    transform: translateY(4px) translateX(7px);
+}
+
+.btn-venmo .payment-icon {
+    transform: translateY(-1px) translateX(8px);
+}
+
+.btn.btn-venmo{
+    background:#008CFF;
+    border-color:#008CFF;
+    color:white;
+}
+
+.btn.btn-venmo:hover{
+    background:#0074d9;
+    border-color:#0074d9;
+}
+
+.btn.btn-paypal{
+    background:#FFC439;
+    border-color:#FFC439;
+    color:#003087;
+    font-weight:600;
+}
+
+.btn.btn-paypal:hover{
+    background:#f4b72a;
+    border-color:#f4b72a;
+    color:#003087;
 }
 
 /* ========== SCHEDULE CARD TIMELINE ========== */
@@ -455,7 +512,7 @@ p {
 .registry-mobile,
 .event-details-mobile {
     display: none;
-    background: var(--page-background);
+    background: transparent;
 }
 
 .details-mobile .section-content {
@@ -477,19 +534,10 @@ p {
     text-align: center;
 }
 
-.schedule-mobile {
-    background: var(--page-background);
-}
-
 .schedule-mobile .section-content {
     display: flex;
     flex-direction: column;
     padding: var(--spacing-lg);
-}
-
-.registry-mobile {
-    background: var(--page-background);
-    color: var(--text-dark);
 }
 
 .registry-mobile .section-content {
@@ -498,7 +546,7 @@ p {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg);
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-sm);
 }
 
 .registry-mobile h2 {
@@ -555,6 +603,13 @@ p {
 
 /* Tablet (Portrait) and Mobile */
 @media (max-width: 768px) {
+
+    body {
+        background: var(--page-background);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
     .main-content {
         display: none;
     }
@@ -567,7 +622,7 @@ p {
     }
 
     .section-content {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-xs);
         max-width: 100%;
     }
 
@@ -671,6 +726,11 @@ p {
         margin-left: auto;
         margin-right: auto;
     }
+    
+    .payment-buttons{
+        flex-direction: column;
+        
+    }
 
     .registry-message {
         font-size: 0.9rem;
@@ -692,7 +752,7 @@ p {
     .section {
         padding: var(--spacing-lg) var(--spacing-sm);
     }
-
+    
     .card {
         padding: var(--spacing-md);
     }
