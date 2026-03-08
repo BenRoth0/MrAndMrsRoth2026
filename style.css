@@ -491,6 +491,7 @@ p {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg);
+    gap: var(--spacing-2xl);
 }
 
 .registry-mobile h2 {
