@@ -265,29 +265,32 @@ p {
 .card h2 {
     color: var(--primary-color);
     margin-top: 0;
+    margin-bottom: var(--spacing-sm);
 }
 
 .card p {
     flex-grow: 1;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
 }
 
 /* ========== EVENT DETAILS CARD ========== */
 
 .details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .detail-item {
-    padding: var(--spacing-md);
+    /* minimal padding for paragraph-like flow */
+    padding: var(--spacing-xs);
+    margin-left: var(--spacing-lg);
 }
 
 .detail-item h3 {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0;
     color: var(--primary-color);
 }
 
