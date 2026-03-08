@@ -9,6 +9,7 @@
     --accent: #c9958a;             /* Muted mauve */
     --border-light: #e8ddd8;       /* Light taupe */
     --shadow: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    --page-background: #faf8f6;    /* Soft warm background */
     
     /* Typography */
     --font-serif: 'Georgia', 'Garamond', serif;
@@ -40,7 +41,7 @@ html {
 body {
     font-family: var(--font-sans);
     color: var(--text-dark);
-    background-color: #ffffff;
+    background-color: var(--page-background);
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -63,7 +64,7 @@ h1 {
 h2 {
     font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: var(--spacing-lg);
-    color: var(--accent);
+    color: var(--primary-color);
 }
 
 h3 {
@@ -103,7 +104,13 @@ p {
 /* ========== HERO SECTION ========== */
 
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
+    background:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+        url("tulips.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: start;
     color: white;
     padding: var(--spacing-2xl) var(--spacing-lg);
 }
@@ -111,10 +118,8 @@ p {
 .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-2xl);
-}
+    align-items: center;    justify-content: center;
+    gap: var(--spacing-2xl);}
 
 .hero-title {
     color: white;
@@ -199,7 +204,7 @@ p {
 /* ========== MAIN CONTENT SECTION (Desktop) ========== */
 
 .main-content {
-    background: white;
+    background: var(--page-background);
     padding: var(--spacing-md);
     display: flex;
     align-items: center;
@@ -240,7 +245,7 @@ p {
 /* ========== CARDS ========== */
 
 .card {
-    background: white;
+    background: var(--secondary-color);
     border: 2px solid var(--border-light);
     border-radius: 16px;
     padding: var(--spacing-md);
@@ -253,7 +258,7 @@ p {
 }
 
 .card:hover {
-    border-color: var(--accent);
+    border-color: var(--primary-color);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
@@ -268,12 +273,6 @@ p {
 }
 
 /* ========== EVENT DETAILS CARD ========== */
-
-.details-card {
-    /* neutral background to match other cards */
-    background: white;
-    border: 2px solid var(--border-light);
-}
 
 .details-grid {
     display: grid;
@@ -301,7 +300,6 @@ p {
 /* ========== RSVP CARD ========== */
 
 .rsvp-card {
-    background: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -314,10 +312,6 @@ p {
 
 /* ========== SCHEDULE CARD ========== */
 
-.schedule-card {
-    background: white;
-}
-
 .schedule-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -327,7 +321,7 @@ p {
 }
 
 .schedule-item {
-    background: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.55);
     padding: var(--spacing-sm);
     border-radius: 8px;
     text-align: center;
@@ -356,8 +350,6 @@ p {
 /* ========== REGISTRY CARD ========== */
 
 .registry-card {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -365,11 +357,11 @@ p {
 }
 
 .registry-card h2 {
-    color: white;
+    color: var(--primary-color);
 }
 
 .registry-card p {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--text-light);
 }
 
 .registry-message {
@@ -378,7 +370,7 @@ p {
 
 .registry-emphasis {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-light);
     margin-bottom: var(--spacing-lg);
 }
 
@@ -391,11 +383,19 @@ p {
     text-decoration: none;
     font-weight: 500;
     text-align: center;
-    border: none;
     cursor: pointer;
     transition: var(--transition);
     font-size: clamp(0.95rem, 2vw, 1rem);
-    border: 2px solid transparent;
+    border: 2px solid var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(212, 165, 165, 0.3);
 }
 
 .btn-primary {
@@ -405,17 +405,6 @@ p {
 
 .btn-primary:hover {
     background: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(212, 165, 165, 0.3);
-}
-
-.registry-card .btn-primary {
-    background: white;
-    color: var(--primary-color);
-}
-
-.registry-card .btn-primary:hover {
-    background: var(--secondary-color);
 }
 
 /* ========== MOBILE-ONLY SECTIONS ========== */
@@ -425,7 +414,7 @@ p {
 .registry-mobile,
 .event-details-mobile {
     display: none;
-    background: white;
+    background: var(--page-background);
 }
 
 .details-mobile .section-content {
@@ -448,7 +437,7 @@ p {
 }
 
 .schedule-mobile {
-    background: var(--secondary-color);
+    background: var(--page-background);
 }
 
 .schedule-mobile .section-content {
@@ -458,8 +447,8 @@ p {
 }
 
 .registry-mobile {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
-    color: white;
+    background: var(--page-background);
+    color: var(--text-dark);
 }
 
 .registry-mobile .section-content {
@@ -471,11 +460,11 @@ p {
 }
 
 .registry-mobile h2 {
-    color: white;
+    color: var(--primary-color);
 }
 
 .registry-mobile p {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--text-light);
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
