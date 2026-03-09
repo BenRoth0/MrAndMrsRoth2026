@@ -2,12 +2,12 @@
 
 :root {
     /* Spring Tulip Color Palette */
-    --primary-color: #d96b86;      /* tulip rose */
-    --secondary-color: #fdf7f5;    /* soft petal background */
-    --accent: #f2a07b;             /* sunset peach */
-    --text-dark: #3b3437;          /* soft charcoal */
-    --text-light: #7a6d70;         /* muted rose grey */
-    --border-light: #ead6cf;       /* warm border */
+    --primary-color: #d96b86;
+    --secondary-color: #fdf7f5;
+    --accent: #f2a07b;
+    --text-dark: #3b3437;
+    --text-light: #7a6d70;
+    --border-light: #ead6cf;
     --shadow: rgba(0,0,0,0.08);
     --page-background: linear-gradient(
         180deg,
@@ -125,7 +125,8 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-2xl);}
+    gap: var(--spacing-2xl);
+}
 
 .hero-title {
     color: white;
@@ -287,13 +288,12 @@ p {
 .details-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     width: 100%;
     text-align: left;
 }
 
 .detail-item {
-    /* minimal padding for paragraph-like flow */
     padding: var(--spacing-xs);
     margin-left: var(--spacing-lg);
 }
@@ -324,27 +324,27 @@ p {
 
 /* ========== PAYMENT BUTTONS ========== */
 
-.payment-buttons{
-    display:flex;
+.payment-buttons {
+    display: flex;
     flex-direction: row;
-    gap:0.75rem;
-    justify-content:center;
-    margin:0.5rem 0;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 0.5rem 0;
 }
 
-.payment-buttons .btn{
-    display:flex;
-    flex:1;
-    align-items:center;
-    justify-content:center;
-    gap:0.6rem;
+.payment-buttons .btn {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
 }
 
-.payment-icon{
-    width:22px;
-    height:22px;
-    display:block;
-    flex-shrink:0;
+.payment-icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+    flex-shrink: 0;
 }
 
 .btn-paypal .payment-icon {
@@ -355,28 +355,28 @@ p {
     transform: translateY(-1px) translateX(8px);
 }
 
-.btn.btn-venmo{
-    background:#008CFF;
-    border-color:#008CFF;
-    color:white;
+.btn.btn-venmo {
+    background: #008CFF;
+    border-color: #008CFF;
+    color: white;
 }
 
-.btn.btn-venmo:hover{
-    background:#0074d9;
-    border-color:#0074d9;
+.btn.btn-venmo:hover {
+    background: #0074d9;
+    border-color: #0074d9;
 }
 
-.btn.btn-paypal{
-    background:#FFC439;
-    border-color:#FFC439;
-    color:#003087;
-    font-weight:600;
+.btn.btn-paypal {
+    background: #FFC439;
+    border-color: #FFC439;
+    color: #003087;
+    font-weight: 600;
 }
 
-.btn.btn-paypal:hover{
-    background:#f4b72a;
-    border-color:#f4b72a;
-    color:#003087;
+.btn.btn-paypal:hover {
+    background: #f4b72a;
+    border-color: #f4b72a;
+    color: #003087;
 }
 
 /* ========== SCHEDULE CARD TIMELINE ========== */
@@ -390,7 +390,6 @@ p {
     padding-top: var(--spacing-lg);
 }
 
-/* timeline line */
 .schedule-items::before {
     content: "";
     position: absolute;
@@ -402,7 +401,6 @@ p {
     z-index: 0;
 }
 
-/* each event */
 .schedule-item {
     position: relative;
     text-align: center;
@@ -410,7 +408,6 @@ p {
     padding-top: var(--spacing-lg);
 }
 
-/* timeline dot */
 .schedule-item::before {
     content: "";
     position: absolute;
@@ -439,6 +436,7 @@ p {
 .schedule-item .description {
     font-size: 0.85rem;
     color: var(--text-light);
+    padding: 0 var(--spacing-md);
 }
 
 .schedule-item:hover::before {
@@ -559,7 +557,6 @@ p {
 
 /* ========== RESPONSIVE DESIGN ========== */
 
-/* Landscape Tablet and Desktop */
 @media (min-width: 1024px) {
     .main-content {
         height: 100vh;
@@ -575,7 +572,6 @@ p {
     }
 }
 
-/* Tablet (Landscape) */
 @media (max-width: 1023px) and (orientation: landscape) {
     .section {
         height: 100vh;
@@ -601,9 +597,7 @@ p {
     }
 }
 
-/* Tablet (Portrait) and Mobile */
 @media (max-width: 768px) {
-
     body {
         background: var(--page-background);
         background-repeat: no-repeat;
@@ -727,9 +721,8 @@ p {
         margin-right: auto;
     }
     
-    .payment-buttons{
+    .payment-buttons {
         flex-direction: column;
-        
     }
 
     .registry-message {
@@ -741,7 +734,6 @@ p {
     }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
     :root {
         --spacing-lg: 1.5rem;
@@ -763,7 +755,16 @@ p {
     }
 
     .schedule-items {
+        margin: 0;
         gap: var(--spacing-sm);
+    }
+
+    .schedule-item {
+        margin: 0;
+    }
+
+    .schedule-item .description {
+        margin: 0;
     }
 
     h1 {
