@@ -258,7 +258,7 @@ p {
     background: var(--secondary-color);
     border: 2px solid var(--border-light);
     border-radius: 16px;
-    padding: var(--spacing-md);
+    padding: var(--spacing-xs);
     box-shadow: 0 4px 12px var(--shadow);
     transition: var(--transition);
     display: flex;
@@ -288,7 +288,6 @@ p {
 .details-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
     width: 100%;
     text-align: left;
 }
@@ -386,7 +385,6 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: var(--spacing-lg);
     padding-top: var(--spacing-lg);
 }
 
@@ -411,7 +409,7 @@ p {
 .schedule-item::before {
     content: "";
     position: absolute;
-    top: 24px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: 12px;
@@ -568,7 +566,7 @@ p {
     }
 
     .card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
     }
 }
 
@@ -635,16 +633,16 @@ p {
     }
 
     .schedule-mobile .section-content {
-        padding: var(--spacing-md);
+        padding: var(--spacing-xs);
     }
 
     .registry-mobile .section-content {
-        padding: var(--spacing-md);
+        padding: var(--spacing-xs);
         text-align: center;
     }
 
     .card {
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm);
         border-radius: 12px;
     }
 
@@ -683,6 +681,10 @@ p {
         top: 6px;
         left: 0;
         transform: none;
+    }
+
+    .schedule-item:hover::before {
+        transform: scale(1.2);
     }
 
     h2 {
@@ -741,12 +743,23 @@ p {
         --spacing-2xl: 2.5rem;
     }
 
+    .schedule-mobile,
+    .details-mobile,
+    .registry-mobile,
+    .event-details-mobile {
+        display: flex;
+    }
+
     .section {
         padding: var(--spacing-lg) var(--spacing-sm);
     }
+
+    .section-content {
+        padding: 0;
+    }
     
     .card {
-        padding: var(--spacing-md);
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .details-grid {
